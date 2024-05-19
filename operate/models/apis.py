@@ -160,7 +160,7 @@ def call_gemini_pro_vision(messages, objective):
         capture_screen_with_cursor(screenshot_filename)
         # sleep for a second
         time.sleep(1)
-        prompt = get_system_prompt("gemini-pro-vision", objective)
+        prompt = get_system_prompt("gemini-1.5-flash-latest", objective)
 
         model = config.initialize_google()
         if config.verbose:
