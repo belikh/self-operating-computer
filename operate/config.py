@@ -72,7 +72,7 @@ class Config:
                 )
             api_key = os.getenv("GOOGLE_API_KEY")
         genai.configure(api_key=api_key, transport="rest")
-        model = genai.GenerativeModel("gemini-pro-vision")
+        model = genai.GenerativeModel("gemini-1.5-flash-latest")
 
         return model
 
@@ -96,7 +96,7 @@ class Config:
             or model == "gpt-4-with-ocr",
         )
         self.require_api_key(
-            "GOOGLE_API_KEY", "Google API key", model == "gemini-pro-vision"
+            "GOOGLE_API_KEY", "Google API key", model == "gemini-1.5-flash-latest"
         )
         self.require_api_key(
             "ANTHROPIC_API_KEY", "Anthropic API key", model == "claude-3"
